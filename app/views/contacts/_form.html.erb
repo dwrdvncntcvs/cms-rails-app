@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <form>
+    <div class="mb-3">
+        <% form.label :name, class: "form-label" %>
+        <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+    </div>
 
-  <div>
-    <%= form.label :contact_number, style: "display: block" %>
-    <%= form.text_field :contact_number %>
-  </div>
+    <div class="mb-3">
+        <% form.label :contact_number, class: "form-label" %>
+        <%= form.text_field :contact_number, class: "form-control", placeholder: "Contact Number" %>
+    </div>
 
-  <div>
-    <%= form.label :physical_address, style: "display: block" %>
-    <%= form.text_field :physical_address %>
-  </div>
+    <div class="mb-3 form-label">
+        <% form.label :physical_address, class: "form-label" %>
+        <%= form.text_field :physical_address, class: "form-control", placeholder: "Physical Address" %>
+    </div>
 
-  <div>
-    <%= form.label :billing_address, style: "display: block" %>
-    <%= form.text_field :billing_address %>
-  </div>
+    <div class="mb-3 form-label">
+        <% form.label :billing_address, class: "form-label" %>
+        <%= form.text_field :billing_address, class: "form-control", placeholder: "Billing Address" %>
+    </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+    <%= form.submit class: "btn btn-dark" %>
+  </form>
 <% end %>
