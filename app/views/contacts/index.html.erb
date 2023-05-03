@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Contact Number</th>
+      <th scope="col">Physical Address</th>
+      <th scope="col">Billing Address</th>
+      <th scope="col" colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @contacts.each do |contact| %>
+        <tr>
+          <td><%= contact.name %></td>
+          <td><%= contact.contact_number %></td>
+          <td><%= contact.physical_address %></td>
+          <td><%= contact.billing_address %></td>
+          <td><%= link_to "View", contact, class:"btn btn-dark btn-block" %></td>
+          <td><%= link_to "Edit", edit_contact_path(contact), class:"btn btn-dark" %></td>
+          <td><%= button_to "Delete", contact, method: :delete, class:"btn btn-dark" %></td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New contact", new_contact_path, class: "btn btn-dark" %>
