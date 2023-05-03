@@ -1,22 +1,14 @@
-<div id="<%= dom_id contact %>">
-  <p>
-    <strong>Name:</strong>
-    <%= contact.name %>
-  </p>
-
-  <p>
-    <strong>Contact number:</strong>
-    <%= contact.contact_number %>
-  </p>
-
-  <p>
+<div class="card py-5 px-4">
+  <p class="display-4"><%= contact.name %></p>
+  <p class="lead"><%= contact.contact_number %></p>
+  <hr class="hr">
+  <address>
     <strong>Physical address:</strong>
     <%= contact.physical_address %>
-  </p>
+  </address>
 
-  <p>
+  <address>
     <strong>Billing address:</strong>
     <%= contact.billing_address %>
-  </p>
-
+  </address>
 </div>
