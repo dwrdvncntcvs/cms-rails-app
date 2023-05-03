@@ -14,6 +14,11 @@
 
   <body>
     <%= render "layouts/navigation" %>
+
+    <% if notice %>
+      <%= render "layouts/alerts" %>
+    <% end %>
+
     <div class="container pt-4"> 
       <%= yield %>
     </div>
