@@ -1,27 +1,29 @@
-<%= link_to "New contact", new_contact_path, class: "btn btn-dark" %>
-
-<table class="table mt-3">
-  <thead>
-    <tr>
-      <th scope="col">Name</th>
-      <th scope="col">Contact Number</th>
-      <th scope="col">Physical Address</th>
-      <th scope="col">Billing Address</th>
-      <th scope="col" colspan="3">Actions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @contacts.each do |contact| %>
+<% if user_signed_in? %>
+  <h2 class="mb-3">Hello! <%= current_user.email if current_user %></h2>
+  <%= link_to "New contact", new_contact_path, class: "btn btn-dark" %>
+  <table class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Contact Number</th>
+        <th scope="col">Physical Address</th>
+        <th scope="col">Billing Address</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each do |contact| %>
         <tr>
-          <td><%= contact.name %></td>
+          <td><%= link_to contact.name, contact %></td>
           <td><%= contact.contact_number %></td>
           <td><%= contact.physical_address %></td>
           <td><%= contact.billing_address %></td>
-          <td><%= link_to "View", contact, class:"btn btn-dark btn-block" %></td>
-          <td><%= link_to "Edit", edit_contact_path(contact), class:"btn btn-dark" %></td>
-          <td><%= button_to "Delete", contact, method: :delete, class:"btn btn-dark" %></td>
+          <td><%= button_to "Delete", contact, method: :delete, class:"btn btn-outline-danger btn-sm" %></td>
         </tr>
-    <% end %>
-  </tbody>
-</table>
-
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h1>Home#index</h1>
+  <p>Find me in app/views/home/index.html.erb</p>
+<% end %>

@@ -6,9 +6,12 @@
     <strong>Physical address:</strong>
     <%= contact.physical_address %>
   </address>
-
   <address>
     <strong>Billing address:</strong>
     <%= contact.billing_address %>
   </address>
+  <div>
+    <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
+    <%= link_to "Back to contacts", contacts_path %>
+  </div>
 </div>

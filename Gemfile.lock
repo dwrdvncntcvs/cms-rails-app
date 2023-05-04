@@ -228,6 +228,9 @@ GEM
       thor (~> 1.0)
       tilt (~> 2.0)
       yard (~> 0.9, >= 0.9.24)
+    solargraph-rails (1.1.0)
+      activesupport
+      solargraph
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -284,6 +287,7 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.3)
   selenium-webdriver
   solargraph
+  solargraph-rails
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
@@ -291,6 +295,7 @@ DEPENDENCIES
   tzinfo-data
   web-console
   webdrivers
+  yard
 
 RUBY VERSION
    ruby 3.2.2p53
